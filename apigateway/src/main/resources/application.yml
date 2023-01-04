@@ -7,6 +7,11 @@ spring:
     name: API-GATEWAY
   main:
     allowBeanDefinitionOverriding: true
+  security:
+    user:
+      name: spydev
+      password: admin
+    
 #api gatewaysetting
 
   cloud:

@@ -19,18 +19,18 @@ public interface RatingService {
     
 
     //get
-    @GetMapping("/api/v1/ratings/user/{userId}")
+    @GetMapping("/ratings/user/{userId}")
     public List<Rating> getRatingsByUserId(@PathVariable String userId);
 
     //POST
-    @PostMapping("/api/v1/ratings/save")
+    @PostMapping("/ratings/save")
     public ResponseEntity<Rating> createRating(Rating values);
 
     //PUT
-    @PutMapping("/api/v1/ratings/{ratingId}")
+    @PutMapping("/ratings/{ratingId}")
     public ResponseEntity<Rating> updateRating(@PathVariable("ratingId") String ratingId, Rating rating);
 
 
-    @DeleteMapping("/api/v1/ratings/{ratingId}")
+    @DeleteMapping("/ratings/{ratingId}")
     public void deleteRating(@PathVariable String ratingId);
 }

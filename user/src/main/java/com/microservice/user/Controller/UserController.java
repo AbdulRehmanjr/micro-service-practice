@@ -36,13 +36,12 @@ public class UserController {
 
         return ResponseEntity.ok().body(this.userService.saveUser(user));
     }
-    int retry_count = 1;
     @GetMapping(value="/{userId}")
-    // @CircuitBreaker(name="RATING_HOTEL_BREAKER",fallbackMethod = "ratingHotelFallBack")
-    @Retry(name = "RATING_HOTEL_SERVICES",fallbackMethod = "ratingHotelFallBack")
+    @CircuitBreaker(name="RATING_HOTEL_BREAKER",fallbackMethod = "ratingHotelFallBack")
+    //@Retry(name = "RATING_HOTEL_SERVICES",fallbackMethod = "ratingHotelFallBack")
     public ResponseEntity<User> getUserById(@PathVariable String userId) {
-        log.info("Retry cound"+retry_count);
-        retry_count++;
+        // log.info("Retry cound"+retry_count);
+        // retry_count++;
         return ResponseEntity.ok().body(this.userService.getUser(userId));
     }
     

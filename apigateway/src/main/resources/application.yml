@@ -5,7 +5,8 @@ server:
 spring:
   application:
     name: API-GATEWAY
-
+  main:
+    allowBeanDefinitionOverriding: true
 #api gatewaysetting
 
   cloud:
